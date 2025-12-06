@@ -1,0 +1,42 @@
+title: Overcast Community
+description: >-
+  The awesome server that lets you play large varieties of Minecraft PvP
+  anytime, anywhere.
+url: https://oc.tc
+server_address: play.oc.tc
+
+google_analytics: G-ZTJL2E4CJW
+
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+defaults:
+  - scope:
+      type: pages
+    values:
+      layout: page
+  - scope:
+      type: posts
+    values:
+      permalink: /blog/:year/:month/:day/:title/ # Removes .html/.md extension from all blog posts
+      image: https://oc.tc/assets/img/image-slider/12.jpg # Front matter doesn't support Liquid, use absolute link instead
+      layout: post
+      is_post: true
+  - scope:
+      path: assets/img/image-slider
+    values:
+      image_slider: true
+
+include: [
+  '_pages'
+]
+
+exclude: [
+  'README.md',
+  'LICENSE.md'
+]
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap

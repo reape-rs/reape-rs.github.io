@@ -1,0 +1,56 @@
+---
+title: Staff
+description: "These folks help run and maintain Overcast Community"
+permalink: staff/
+in-nav: true
+icon: "fas fa-users"
+---
+
+{% include image-header.html image='/assets/img/image-slider/19.png' %}
+
+<div class="container my-4">
+  {% for rank in site.data.staff %}
+    <div class="rank">
+      <div class="row">
+        <div class="col">
+          <h2 style="color: {{ rank[1].color }}">
+            {{ rank[0] | capitalize }}
+            <small class="text-muted">{{ rank[1].members.size }}</small>
+          </h2>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        {% for player in rank[1].members %}
+          <div class="col-md-3 col-sm-6 text-center">
+            <img src="{{ site.data.providers.player_avatars }}{{ player.id }}?overlay&size=84" width="84" height="84" alt="{{ player.username | append: ' Minecraft avatar' }}" title="{{ player.username | append: ' Minecraft avatar' }}">
+            <h4>{{ player.username }}</h4>
+            {% if player.role %}
+              <small class="text-muted">{{ player.role }}</small>
+            {% endif %}
+            {% if player.links %}
+              <div class="player-links">
+                {% if player.links.twitter %}
+                  <a href="https://twitter.com/{{ player.links.twitter }}" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter" class="text-muted"><i class="fab fa-twitter"></i></a>
+                {% endif %}
+                {% if player.links.github %}
+                  <a href="https://github.com/{{ player.links.github }}" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub" class="text-muted"><i class="fab fa-github"></i></a>
+                {% endif %}
+                {% if player.links.email %}
+                  <a href="mailto:{{ player.links.email }}" data-toggle="tooltip" data-placement="top" title="Email" aria-label="Email" class="text-muted"><i class="fa fa-envelope"></i></a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+  <div>
+    <hr/>
+    <div class="text-center">
+      <p>We are proud to honor the many talented staff members who have contributed to Overcast over the years. Their hard work and dedication have had a lasting impact and we are grateful for their service.</p>
+      <a class="btn btn-primary btn-md" href="{{ site.baseurl }}{% link _pages/retired.html %}">Retired Staff</a>
+    </div>
+  </div>
+</div>

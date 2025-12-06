@@ -1,0 +1,39 @@
+<footer>
+  <div class="container">
+    <hr>
+    <div class="row" style="align-items: center">
+      <div class="col-12 col-md-7">
+        <span class="copyright text-muted">
+          &copy; {{ site.title }}
+        </span>
+        <span class="copyright text-muted text-uppercase" style="font-size: 0.72rem;">
+          Not an official Minecraft service. Not approved by or associated with Mojang or Microsoft
+        </span>
+      </div>
+      <div class="col-12 col-md-5">
+        <ul class="nav justify-content-md-end">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.data.links.twitter }}" target="_blank">Twitter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.data.links.discord }}" target="_blank">Discord</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.data.links.twitch }}" target="_blank">Twitch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.data.links.youtube }}" target="_blank">YouTube</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.data.links.github }}" target="_blank">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+</footer>

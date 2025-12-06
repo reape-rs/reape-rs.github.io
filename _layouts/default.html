@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body id="{% if page.layout == 'page' %}{{ page.title | downcase }}{% elsif page.layout == 'post' %}post{% endif %}">
+    {% include nav.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+  </body>
+</html>

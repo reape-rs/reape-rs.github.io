@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article>
+  <div class="container my-4">
+    <header>
+      <h2 class="post-title">
+        {{ page.title }}
+        <hgroup class="post-info">
+          {{ page.author }}
+          -
+          <time datetime="{{ page.date | date: '%F' }}">{{ page.date | date: '%B %e, %Y' }}</time>
+        </hgroup>
+      </h2>
+    </header>
+    <hr>
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,18 @@
+---
+title: Live 🔴
+description: "The Overcast's Bizarre Gamemodes tournament"
+permalink: live/
+in-nav: false
+---
+
+{% include image-header.html image='/assets/img/image-slider/9.jpg' %}
+
+<div class="container mt-2">
+  <div class="row">
+    {% for channel in site.data.channels %}
+      <div class="col-sm-12 col-md-6 my-3">
+        {% include twitch-player.html id=channel %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
